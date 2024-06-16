@@ -5,23 +5,22 @@
 <html>
     <Head>
         <style type="text/css">
-            
+             body{
+                    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSS_YJ8jz7N2nFBIY1IsUZQzsUFwaoAhsPvQ&usqp=CAU);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                }
             .row{
                  background-color :white;
                     width: 25%;
                     margin-left:40%;
                     
             }
-             
             .button{
                 width: 30%;
                 
             }
-             body{
-                    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPe9wsvOohitqcKi_KuS10bclNS_s90topew&usqp=CAU);
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                }
             
         </style>
        
@@ -39,7 +38,7 @@
        
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brnd" href="#"><h1 >Library Managment System(LMS)</h1></a>
+                    <a class="navbar-brnd"><h1 >Library Managment System(LMS)</h1></a>
                     <span><strong><h3>Welcome:<?php echo $_SESSION['name'];?></h3></strong></span>
                     <span><strong><h3>ID:<?php echo $_SESSION['id'];?></h3></strong></span>
                 

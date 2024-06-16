@@ -2,31 +2,30 @@
 <html>
     <Head>
         <style type="text/css">
-            
-                #side_bar{
-                    background-image: url('img1.jpg');
+             #side_bar{
+                    background-image: url('../img1.jpg');
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
                 .navbar-brand{
                     margin-bottom: 50px;
                 }
+
                 .slider{
     width:100%;
     height:350px;
     
 }
+
 #img{
     width:100%;
     height:100%;
     object-fit: contain;
 }
-           
         </style>
        
-
         <title>
-            User Login
+            Admin Login
         </title>
        
         <link rel="stylesheet" href="style.css">
@@ -37,22 +36,21 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
        
             <div class="container-fluid">
-
                 <div class="navbar-header">
-                    <a class="navbar-brand"  style="font-size: larger;"><h1>Library Managment System(LMS)</h1></a>
+                    <a class="navbar-brand" ><h1 >Library Managment System(LMS)</h1></a>
                 
 
                 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
-                        <a class="nav-link" href="admin/index.php">Admin login</a>
-                    </li><br>
+                        <a class="nav-link" href="index.php">Admin login</a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">User login</a>
-                    </li><br>
+                        <a class="nav-link" href="../index.php">User login</a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="signup.php">Register</a>
-                    </li><br>
+                        <a class="nav-link" href="../signup.php">User Register</a>
+                    </li>
                 </ul>
             </div>
             </div>
@@ -61,9 +59,8 @@
         
         <br>
         <span>
-            <marquee id="welcome" > This is library Managment System. Library opens at 8:00 Am and close at 6:00 Pm</marquee>
+            <marquee id="welcome"> This is library Managment System. Library opens at 8:00 Am and close at 6:00 Pm</marquee>
         </span><br>
-        
         <div class="row">
             <div class=" columns " id="side_bar"> 
                 <h4>Library Timing</h4>
@@ -74,7 +71,7 @@
                 </ul>
                 <h4>What we Provid?</h4>
                 <ul>
-                    <li>Fully furniture</li>
+                    
                     <li>Free wi-fi</li>
                     <li>News Papers</li>
                     <li>Dissussion Room</li>
@@ -88,17 +85,15 @@
                     <li>Electronic and Communication</li>
                     <li>Civil</li>
                     <li>Mechanical</li>
-                    <li>Mechine Learning</li>
+                    <li>Machine Learning</li>
                 </ul>
             </div>
             <div class=" columns" id="main_content">
-
-                <div class="slider">
+                 <div class="slider">
                     <div id="img">
-                <img src="img6.jpg" width="100%" height="100%">
+                <img src="../img6.jpg" width="100%" height="100%">
             </div>
-            </div>
-                <center><h2>User Login Form</h2></center>
+                <center><h2>Admin Login Form</h2></center>
                 <form action="" method="post">
                     
                      <div class="form-group">
@@ -116,9 +111,6 @@
                      
                 </form>
             </div>
-        
-
-
 
             
             <?php
@@ -126,7 +118,7 @@
                     if(isset($_POST['login'])){
                         $connection = mysqli_connect("localhost", "root", "");
                         $db = mysqli_select_db($connection,"keety");
-                        $query ="SELECT * FROM users WHERE  id ='$_POST[id]'";
+                        $query ="SELECT * FROM admins WHERE  id ='$_POST[id]'";
                         $query_run=mysqli_query($connection,$query);
                         while($row = mysqli_fetch_assoc($query_run)){
                             if($row['id']==$_POST['id']){
@@ -134,7 +126,7 @@
                                    $_SESSION['name'] = $row['name'];
                                    $_SESSION['email'] = $row['email'];
                                    $_SESSION['id'] = $row['id'];
-                                   header("Location:user_dashboard.php");
+                                   header("Location:admin_dashboard.php");
                                 }
                                 else{
                                     ?>
@@ -151,7 +143,6 @@
 
             </div>
         </div>
-
        
     </body>
 </html>

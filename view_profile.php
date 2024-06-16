@@ -7,7 +7,7 @@
     $email="";
     $mobile="";
     $address="";
-    $query ="SELECT * FROM users WHERE  id ='$_SESSION[id]'";
+    $query ="SELECT * FROM admins WHERE  id ='$_SESSION[id]'";
     $query_run=mysqli_query($connection,$query);
     while($row = mysqli_fetch_assoc($query_run)){
         $name=$row['name'];
@@ -21,23 +21,18 @@
 <html>
     <Head>
         <style type="text/css">
-             
             .rows{
                     background-color :white;
                     width: 50%;
                     margin-left:25%;
                 }
-                body{
-                    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPe9wsvOohitqcKi_KuS10bclNS_s90topew&usqp=CAU);
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                }
 
-      
+       
+       
         </style>
         
         <title>
-           User Dashboard
+           Admin Dashboard
         </title>
        
         <link rel="stylesheet" href="style.css">
@@ -50,7 +45,7 @@
        
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brnd"><h1 >Library Managment System(LMS)</h1></a>
+                    <a class="navbar-brnd" ><h1 >Library Managment System(LMS)</h1></a>
                     <span><strong><h3>Welcome:<?php echo $_SESSION['name'];?></h3></strong></span>
                     <span><strong><h3>ID:<?php echo $_SESSION['id'];?></h3></strong></span>
                 

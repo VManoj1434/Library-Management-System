@@ -7,7 +7,7 @@
     $email="";
     $mobile="";
     $address="";
-    $query ="SELECT * FROM users WHERE  id ='$_SESSION[id]'";
+    $query ="SELECT * FROM admins WHERE  id ='$_SESSION[id]'";
     $query_run=mysqli_query($connection,$query);
     while($row = mysqli_fetch_assoc($query_run)){
         $name=$row['name'];
@@ -21,23 +21,23 @@
 <html>
     <Head>
         <style type="text/css">
-             
+             body{
+                    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSS_YJ8jz7N2nFBIY1IsUZQzsUFwaoAhsPvQ&usqp=CAU);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                }
             .rows{
                     background-color :white;
                     width: 50%;
                     margin-left:25%;
                     
                 }
-                 body{
-                    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPe9wsvOohitqcKi_KuS10bclNS_s90topew&usqp=CAU);
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                }
                
         </style>
         
         <title>
-           User Dashboard
+           Admin Dashboard
         </title>
        
         <link rel="stylesheet" href="style.css">
@@ -49,13 +49,13 @@
        
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brnd" ><h1 >Library Managment System(LMS)</h1></a>
+                    <a class="navbar-brnd"><h1 >Library Managment System(LMS)</h1></a>
                     <span><strong><h3>Welcome:<?php echo $_SESSION['name'];?></h3></strong></span>
                     <span><strong><h3>ID:<?php echo $_SESSION['id'];?></h3></strong></span>
                 
 
                 
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-leftt">
                     <li class="nav-item dropdown">
                         <div class="dropdown">
                               <button class="dropbtn">My_profile</button>
@@ -78,10 +78,10 @@
         
         <br>
         <span>
-            <marquee id="welcome"> This is library Managment System. Library opens at 8:00 Am and close at 6:00 Pm</marquee>
+            <marquee id="welcome">This is library Managment System. Library opens at 8:00 Am and close at 6:00 Pm</marquee>
             
         </span><br>
-       
+       <div class="bag-img">
         <div class="rows">
 
             <div class="col-md-4"></div>
@@ -104,7 +104,7 @@
                 </form>
             </div>
         </div>
-
+</div>
        
     </body>
 </html>
